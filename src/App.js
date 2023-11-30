@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import Calculator from './Calculator';
+import History from './History';
+import './App.css'; 
 
-function App() {
+const App = () => {
+  const [history, setHistory] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
+  const [calculation, setCalculation] = useState('0');
+
+  useEffect(() => {
+    const storedHistory = localStorage.getItem('calculatorHistory');
+    if (storedHistory) {
+      setHistory(JSON.parse(storedHistory));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('calculatorHistory', JSON.stringify(history));
+  }, [history]);
+
+  const addToHistory = (calculation) => {
+    setHistory([...history, calculation]);
+  };
+
+  const handleToggleHistory = () => {
+    setShowHistory(!showHistory);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app" >
+      <Calculator
+        calculation={calculation}
+        setCalculation={setCalculation}
+        handleToggleHistory={handleToggleHistory}
+        addToHistory={addToHistory}
+        showHistory={showHistory}
+      />
+      {showHistory && (
+        <History
+          history={history}
+          setHistory={setHistory}
+          addToHistory={addToHistory}
+          setCalculation={setCalculation}
+          handleToggleHistory={handleToggleHistory}
+         
+        />
+      )}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar {
+  display: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+
+}
+
+.calculator-container {
+  width: 50%;
+  height: 100vh;
+  float: left;
+  background-color: #f5f5f5;
+  border-right: 2px solid #707070;
+}
+
+.calculator-display, .calculator-buttons {
+  width: 100%;
+  height: 50vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.calculator-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator-header span {
+  font-size: 22px;
+  font-weight: 500;
+
+}
+.calculation-text-body{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.calculation-text {
+  padding: 20px;
+  font-size: 34px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+
+.calculator-buttons {
+ display: flex;
+ justify-content: flex-end;
+ flex-direction: column;
+  height: 50%;
+  padding: 10px;
+}
+.calc-row{
+  display: flex;
+
+}
+
+.calculator-buttons button {
+  width: 100%;
+  padding:16px 15px;
+  font-size: 20px;
+
+  
+  cursor: pointer;
+  font-weight: 500;
+  border: 2px solid #707070;
+  background-color: white;
+}
+
+.calculator-buttons button:hover {
+  background-color: #ccc;
+}
+
+/* History styles */
+.history {
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  float: right;
+  padding: 10px 0px;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 0;
+}
+
+.history-header button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 10px;
+  
+}
+
+.history-header span {
+  font-size: 22px;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 4px solid rgb(108, 108, 235);
+}
+
+.history-items div {
+  padding: 10px ;
+  cursor: pointer;
+}
+
+.history-items div:hover {
+  background-color: #ebebeb;
+}
+
+.clear-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.clear-btn:hover {
+  background-color: #ccc;
 }
