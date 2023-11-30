@@ -154,3 +154,18 @@ body::-webkit-scrollbar {
 .clear-btn:hover {
   background-color: #ccc;
 }
+@media (max-width: 600px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .calculator-container,
+  .history {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .calculator-buttons {
+    height: 100%;
+  }
+}
