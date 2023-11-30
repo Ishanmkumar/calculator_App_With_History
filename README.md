@@ -12,7 +12,7 @@ Before you begin, ensure you have the following installed:
 ## Clone the Repository
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Megh2507/calculatorAppWithHistory.git
 cd react-app
 
 ## Install Dependencies
