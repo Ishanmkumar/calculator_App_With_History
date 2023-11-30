@@ -14,21 +14,7 @@ Before you begin, ensure you have the following installed:
 ```bash
 git clone https://github.com/Megh2507/calculatorAppWithHistory.git
 cd react-app
-
-## Install Dependencies
-
-Before running the application, install the required dependencies using npm (Node Package Manager) or Yarn. Navigate to the project directory in your terminal and execute the following command:
-
-```bash
 npm install
 # or
 yarn install
-
-## Running the Application
-
-To start the development server and run the application locally, use the following command:
-
-### Using npm:
-
-```bash
-npm start
+yarn start
